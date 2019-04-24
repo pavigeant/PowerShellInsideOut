@@ -1,4 +1,5 @@
 function WhenExpectingAMandatoryParameter {
+    [CmdletBinding()]
     param (
         [Parameter(Mandatory, ValueFromPipeline)]
         $Value
@@ -8,7 +9,7 @@ function WhenExpectingAMandatoryParameter {
     [void] $Value
 }
 
-Describe "Parameter Mandatory" {
+Describe "Parameter Mandatory" -Tag Unit {
     Context "When passing value as a parameter" {
         It "Should work properly using non null value" -TestCases @(
             @{ Value = "" }
